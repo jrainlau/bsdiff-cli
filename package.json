@@ -1,0 +1,21 @@
+{
+  "name": "bsdiff-cli",
+  "version": "1.0.0",
+  "bin": {
+    "bsdiff": "bin/index.js"
+  },
+  "scripts": {
+    "test": "cd ./test && jest"
+  },
+  "repository": "https://github.com/jrainlau/bsdiff-cli.git",
+  "author": "jrainliu <jrainliu@tencent.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bsdiff-node": "^2.4.0",
+    "cli-progress": "^3.11.2",
+    "commander": "^9.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2"
+  }
+}
