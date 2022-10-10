@@ -12,7 +12,7 @@ npm i bsdiff-cli -g
 ```
 
 ### Usage
-While using `bsdiff-cli`, all the files must be in the same folder, and the `bsdiff` command should be use inside this folder, too.
+While using `bsdiff-cli`, all the files must be in the same folder, and the `bsdiff` command should be used inside this folder, too.
 
 `<oldFile>`, `<newFile>` and `<patchFile>` should be the file name without any path string, nor errors would occurred.
 
