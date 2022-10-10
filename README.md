@@ -1,0 +1,2 @@
+# bsdiff-cli
+bsdiff globally
