@@ -26,5 +26,10 @@ Commands:
   help [command]                           display help for command
 ```
 
+### Test
+```bash
+yarn test
+```
+
 ### License
 MIT
