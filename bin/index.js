@@ -16,7 +16,7 @@ program
   .usage('<command>')
 
 program
-  .command('diff <oldFile> <newFile>')
+  .command('diff <oldFile> <newFile> <patchFile?>')
   .description('Do diff and get patch file')
   .alias('d')
   .action(() => {

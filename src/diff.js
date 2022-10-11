@@ -3,11 +3,12 @@ const fs = require('fs')
 const path = require('path')
 const cliProgress = require('cli-progress')
 
-module.exports = (file1, file2) => {
+module.exports = (file1, file2, patchFile) => {
   const pwd = process.cwd()
   const filePath1 = path.join(pwd, file1)
   const filePath2 = path.join(pwd, file2)
-  const patchFilePath = path.join(pwd, `${file1}-${file2}.patch`)
+  const patchFileName = patchFile || `${file1.replace(/\.[^/.]+$/, '')}-${file2.replace(/\.[^/.]+$/, '')}.patch`
+  const patchFilePath = path.join(pwd, patchFileName)
   
   if (!fs.existsSync(filePath1)) {
     console.error(`Error: Cannot found ${file1} in ${pwd}.`)
@@ -15,6 +16,10 @@ module.exports = (file1, file2) => {
   }
   if (!fs.existsSync(filePath2)) {
     console.error(`Error: Cannot found ${file2} in ${pwd}.`)
+    return
+  }
+  if (!patchFilePath.endsWith('.patch')) {
+    console.error(`Error: Patch file name must ends width ".patch".`)
     return
   }
 
