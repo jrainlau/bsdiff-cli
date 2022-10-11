@@ -23,14 +23,15 @@ module.exports = (file1, file2) => {
   const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
   progressBar.start(100, 0)
 
-  return new Promise((resolve) => {
-    bsdiff.diff(filePath1, filePath2, patchFilePath, (res, err) => {
-      progressBar.update(res);
-      if (res === 100) {
-        progressBar.stop()
-        console.log(`\n🎉 Do diff process done! \n🤗 Patch file locates in ${patchFilePath}.\n`)
-        resolve()
-      }
-    })
+  return bsdiff.diff(filePath1, filePath2, patchFilePath, (res, err) => {
+    progressBar.update(res);
+    if (res === 100) {
+      progressBar.stop()
+      console.log(`\n🎉 Do diff process done! \n🤗 Patch file locates in ${patchFilePath}.\n`)
+    }
+    if (err) {
+      console.error(err)
+      process.exit(1)
+    }
   })
 }
