@@ -25,7 +25,7 @@ Options:
   -h, --help                               display help for command
 
 Commands:
-  diff|d <oldFile> <newFile> <patchFile?>  Do diff and get patch file
+  diff|d <oldFile> <newFile> [patchFile]   Do diff and get patch file
   patch|p <oldFile> <newFile> <patchFile>  Do patch and get new file
   help [command]                           display help for command
 ```

@@ -16,12 +16,12 @@ program
   .usage('<command>')
 
 program
-  .command('diff <oldFile> <newFile> <patchFile?>')
+  .command('diff <oldFile> <newFile> [patchFile]')
   .description('Do diff and get patch file')
   .alias('d')
   .action(() => {
-    const [command, file1, file2] = program.args
-    diff(file1, file2)
+    const [command, file1, file2, patchFile] = program.args
+    diff(file1, file2, patchFile)
   })
 
 program
