@@ -25,7 +25,7 @@ module.exports = (file1, file2) => {
 
   return bsdiff.diff(filePath1, filePath2, patchFilePath, (res, err) => {
     progressBar.update(res);
-    if (res === 100) {
+    if (res >= 100) {
       progressBar.stop()
       console.log(`\n🎉 Do diff process done! \n🤗 Patch file locates in ${patchFilePath}.\n`)
     }

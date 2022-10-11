@@ -29,7 +29,7 @@ module.exports = (oldFile, newFile, patchFile) => {
 
   return bsdiff.patch(oldFilePath, newFilePath, patchFilePath, (res, err) => {
     progressBar.update(res);
-    if (res === 100) {
+    if (res >= 100) {
       progressBar.stop()
       console.log(`\n🎉 Do patch process done! \n🤗 New file locates in ${newFilePath}.\n`)
     }
