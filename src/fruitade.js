@@ -46,7 +46,7 @@ exports.fruitadePatch = async (oldFolder, patchesFolder, newFolder) => {
 
   await generateNewVersionPackage({
     folderOfA: actualOldFolderPath,
-    patchesFolder: actualPatchesFolderPath,
+    folderOfPatches: actualPatchesFolderPath,
     folderOfNewVersion: actualNewFolderPath,
   })
 
