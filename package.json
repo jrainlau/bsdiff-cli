@@ -5,6 +5,7 @@
     "bsdiff": "bin/index.js"
   },
   "scripts": {
+    "dev": "node ./bin/index.js",
     "test": "cd ./test && jest"
   },
   "repository": "https://github.com/jrainlau/bsdiff-cli.git",
@@ -13,7 +14,8 @@
   "dependencies": {
     "bsdiff-node": "^2.4.0",
     "cli-progress": "^3.11.2",
-    "commander": "^9.4.1"
+    "commander": "^9.4.1",
+    "fruitade": "^1.1.0"
   },
   "devDependencies": {
     "jest": "^29.1.2"
