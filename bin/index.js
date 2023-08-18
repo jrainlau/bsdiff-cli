@@ -6,7 +6,7 @@ const path = require('path')
 
 const diff = require('../src/diff.js')
 const patch = require('../src/patch.js')
-const fruitade = require('../src/fruitade.js')
+const { fruitadeDiff, fruitadePatch } = require('../src/fruitade.js')
 
 process.env.NODE_PATH = resolve(__dirname, '../node_modules/')
 
@@ -35,12 +35,21 @@ program
   })
 
 program
-  .command('fruitade <oldFolder> <newFolder> [folderOfPatches]')
-  .description('Do patch by folder structure')
-  .alias('f')
+  .command('fruitadeDiff <oldFolder> <newFolder> [patchesFolder]')
+  .description('Do diff by folder structure')
+  .alias('fd')
   .action(() => {
-    const [command, oldFolder, newFolder, folderOfPatches] = program.args
-    fruitade(oldFolder, newFolder, folderOfPatches)
+    const [command, oldFolder, newFolder, patchesFolder] = program.args
+    fruitadeDiff(oldFolder, newFolder, patchesFolder)
+  })
+
+program
+  .command('fruitadePatch <oldFolder> <patchesFolder> <newFolder>')
+  .description('Do patch by folder structure')
+  .alias('fp')
+  .action(() => {
+    const [command, oldFolder, patchesFolder, newFolder] = program.args
+    fruitadePatch(oldFolder, patchesFolder, newFolder)
   })
 
 program.parse(process.argv)
