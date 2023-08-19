@@ -1061,10 +1061,10 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-fruitade@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/fruitade/-/fruitade-1.1.0.tgz#501cbee1f7f2c26064adbf7bcb4bc6927484bea5"
-  integrity sha512-4UKhPeCP5wgRnBqspJQORzB92hn0kSShh2Rz0wUAdPUFKeqGTgCx9r8I+Q/oLWPpqvkpsMIPchKdgGImBcRiFQ==
+fruitade@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/fruitade/-/fruitade-1.1.1.tgz#564fc007696dea5303b0eefde5882c7824f7dfae"
+  integrity sha512-A6GzczU2ca6u8NhBmHOFuE2gLtb07N+nOoe5KjPrfL3ne3G/FGqfPlGYoJrzNNpJ92IztDG3pMtJd07f6FkFog==
   dependencies:
     bsdiff-node "^2.4.0"
     fs-extra "^11.1.1"
