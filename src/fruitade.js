@@ -2,6 +2,8 @@ const { generatePatchPackage, generateNewVersionPackage } = require('fruitade')
 const fs = require('fs')
 const path = require('path')
 
+const getBsdiff = () => require('bsdiff-node')
+
 exports.fruitadeDiff = async (oldFolder, newFolder, patchesFolder) => {
   patchesFolder = patchesFolder ? patchesFolder :  `${oldFolder}-${newFolder}`
   const pwd = process.cwd()
@@ -23,6 +25,7 @@ exports.fruitadeDiff = async (oldFolder, newFolder, patchesFolder) => {
     folderOfA: actualOldFolderPath,
     folderOfB: actualNewFolderPath,
     patchesFolder: actualPatchesFolderPath,
+    getBsdiff,
   })
 
   return true
@@ -48,6 +51,7 @@ exports.fruitadePatch = async (oldFolder, patchesFolder, newFolder) => {
     folderOfA: actualOldFolderPath,
     folderOfPatches: actualPatchesFolderPath,
     folderOfNewVersion: actualNewFolderPath,
+    getBsdiff,
   })
 
   return true
