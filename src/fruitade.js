@@ -24,7 +24,7 @@ exports.fruitadeDiff = async (oldFolder, newFolder, patchesFolder) => {
   await generatePatchPackage({
     folderOfA: actualOldFolderPath,
     folderOfB: actualNewFolderPath,
-    patchesFolder: actualPatchesFolderPath,
+    folderOfPatches: actualPatchesFolderPath,
     getBsdiff,
   })
 
